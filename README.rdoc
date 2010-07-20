@@ -1,0 +1,71 @@
+= .irbrc
+
+This is my .irbrc configuration file
+
+== Where to place it?
+	
+Place it in your home directory (~/.irbrc)
+or you can symlink it from other folder like this:
+	
+	$ cd ~ (or 'cd')
+	$ ln -s folder/where/you/cloned/this/repo/irbrc/dot_irbrc .irbrc
+
+== Contents
+
+=== Loaded libraries
+
+* rubygems (http://www.rubygems.com)
+* Wirble (http://pablotron.org/software/wirble/)
+* pp (http://www.ensta.fr/~diam/ruby/online/ruby-doc-stdlib/libdoc/pp/rdoc/index.html)
+* irb/ext/save-history (http://ruby-doc.org/core/files/lib/irb/ext/save-history_rb.html)
+
+=== History
+
+You'd need to create a file called .irb-save-history in your home directory for this to work
+
+=== Prompt
+
+I use a simple prompt for the IRb sessions
+
+	IRB.conf[:PROMPT_MODE] = :SIMPLE
+	
+And a customized one for Rails sessions
+	
+	IRB.conf[:PROMPT][:RAILS] = {}
+	
+=== ActiveRecord log
+	
+This will print the log in the console.
+
+	IRB.conf[:IRB_RC] = Proc.new do
+    	logger = Logger.new(STDOUT)
+		ActiveRecord::Base.logger = logger
+		...
+	
+=== Helper methods
+
+clear 	- clear the screen
+ri		- it's a wrapper to the ri command-line ruby documentation utility
+
+
+=== Core Extensions
+
+Object
+	local_methods	- shows the methods of an object getting rid of the Object.instance_methods
+	eigenclass		- please read about meta-programming in Ruby
+	to_pboard		- "some text".to_pboard copies "some text" to the Mac OS's default pasteboard (clipboard)
+	from_pboard		- it pastes the content of the Mac OS's default pasteboard, like doing Cmd-V
+
+=== Aliases
+	q  => exit
+	cl => clear (helper method)
+	
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010 Rafael Magaña. See LICENSE for details.
