@@ -52,9 +52,14 @@ ri		- it's a wrapper to the ri command-line ruby documentation utility
 
 Object
 	local_methods	- shows the methods of an object getting rid of the Object.instance_methods
-	eigenclass		- please read about meta-programming in Ruby
-	to_pboard		- "some text".to_pboard copies "some text" to the Mac OS's default pasteboard (clipboard)
-	from_pboard		- it pastes the content of the Mac OS's default pasteboard, like doing Cmd-V
+	eigenclass	- please read about meta-programming in Ruby
+	to_pboard	- "some text".to_pboard copies "some text" to the Mac OS's default pasteboard (clipboard)
+	from_pboard	- it pastes the content of the Mac OS's default pasteboard, like doing Cmd-V
+
+Class
+	class_methods
+	defined_methods	- returns a hash with two keys :instance (instance methods) and :class (class methods)
+	metaclass	- returns the eigenclass
 
 === Aliases
 	q  => exit
