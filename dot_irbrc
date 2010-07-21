@@ -98,7 +98,7 @@ class Object
   #copy to pasteboard
   #pboard = general | ruler | find | font
   def to_pboard(pboard=:general)
-    %x[printf "#{self.to_s}" | pbcopy -pboard #{pboard.to_s}]
+    %x[printf %s "#{self.to_s}" | pbcopy -pboard #{pboard.to_s}]
     paste pboard
   end
   alias :to_pb :to_pboard
