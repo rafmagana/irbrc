@@ -54,6 +54,7 @@ Object
 	eigenclass	- please read about meta-programming in Ruby
 	to_pboard	- "some text".to_pboard copies "some text" to the Mac OS's default pasteboard (alias 'to_pb')
 	paste		- it pastes the content of the Mac OS's default pasteboard
+	to_find		- a wrapper to to_pboard :find
 
 Class
 	class_methods

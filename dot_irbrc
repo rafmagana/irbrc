@@ -81,6 +81,10 @@ class Object
   #pboard = general | ruler | find | font
   def paste(pboard=:general)
     %x[pbpaste -pboard #{pboard.to_s}].chomp
+  end
+  
+  def to_find
+    self.to_pb :find
   end  
 
   def eigenclass
