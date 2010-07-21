@@ -47,14 +47,13 @@ This will print the log in the console.
 clear 	- clear the screen
 ri		- it's a wrapper to the ri command-line ruby documentation utility
 
-
 === Core Extensions
 
 Object
 	local_methods	- shows the methods of an object getting rid of the Object.instance_methods
 	eigenclass	- please read about meta-programming in Ruby
-	to_pboard	- "some text".to_pboard copies "some text" to the Mac OS's default pasteboard (clipboard)
-	from_pboard	- it pastes the content of the Mac OS's default pasteboard, like doing Cmd-V
+	to_pboard	- "some text".to_pboard copies "some text" to the Mac OS's default pasteboard (alias 'to_pb')
+	paste		- it pastes the content of the Mac OS's default pasteboard
 
 Class
 	class_methods

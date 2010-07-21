@@ -72,13 +72,14 @@ class Object
   #copy to pasteboard
   #pboard = general | ruler | find | font
   def to_pboard(pboard=:general)
-    system("echo '#{self.to_s}' | pbcopy -pboard #{pboard.to_s}")
-    nil
-  end  
+    %x[printf "#{self.to_s}" | pbcopy -pboard #{pboard.to_s}]
+    paste pboard
+  end
+  alias :to_pb :to_pboard
 
   #paste from given pasteboard
   #pboard = general | ruler | find | font
-  def from_pboard(pboard=:general)
+  def paste(pboard=:general)
     %x[pbpaste -pboard #{pboard.to_s}].chomp
   end  
 
