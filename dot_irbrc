@@ -46,9 +46,35 @@ if ENV['RAILS_ENV']
     ActiveResource::Base.logger = logger
     ActiveRecord::Base.instance_eval { alias :[] :find }
   end
+  
+  ### RAILS SPECIFIC HELPER METHODS
+  # TODO: DRY this out
+  def log_ar_to (stream)
+    ActiveRecord::Base.logger = expand_logger stream
+    reload!
+  end
+
+  def log_ac_to (stream)
+    logger = expand_logger stream
+    ActionController::Base.logger = expand_logger stream
+    reload!
+  end
+    
+  def expand_log_file(name)
+    "log/#{name.to_s}.log"
+  end
+  
+  def expand_logger(name)
+    if name.is_a? Symbol
+      logger = expand_log_file name
+    else
+      logger = name
+    end
+    Logger.new logger
+  end
 end
 
-### HELPER METHODS
+### IRb HELPER METHODS
 
 #clear the screen
 def clear

@@ -42,10 +42,15 @@ This will print the log in the console.
 		ActiveRecord::Base.logger = logger
 		...
 	
-=== Helper methods
+=== IRb Helper methods
 
 clear 	- clear the screen
 ri		- it's a wrapper to the ri command-line ruby documentation utility
+
+=== Rails-specific Helper methods
+
+log_ar_to :record - Change the ActiveRecord's logger to log/record.log
+log_ac_to :controller - Change the ActiveController's logger to log/controller.log
 
 === Core Extensions
 
