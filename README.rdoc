@@ -60,6 +60,7 @@ Object
 	to_pboard	- "some text".to_pboard copies "some text" to the Mac OS's default pasteboard (alias 'to_pb')
 	paste		- it pastes the content of the Mac OS's default pasteboard
 	to_find		- a wrapper to to_pboard :find
+	ql			- do you know the QuickLook feature on Mac OS? well, "path/to/folder_or_image".ql will show you the folder stats or the image, Ctrl-C will close it
 
 Class
 	class_methods

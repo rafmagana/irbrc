@@ -116,7 +116,10 @@ class Object
   def eigenclass
     class << self; self; end
   end
-  
+
+  def ql
+    %x[qlmanage -p #{self.to_s} >& /dev/null  ]
+  end
 end
 
 class Class
