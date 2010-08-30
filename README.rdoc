@@ -18,10 +18,12 @@ or you can symlink it from other folder like this:
 * Wirble (http://pablotron.org/software/wirble/)
 * pp (http://www.ensta.fr/~diam/ruby/online/ruby-doc-stdlib/libdoc/pp/rdoc/index.html)
 * irb/ext/save-history (http://ruby-doc.org/core/files/lib/irb/ext/save-history_rb.html)
+* ap (http://github.com/michaeldv/awesome_print)
+* mush (http://github.com/rafmagana/mush)
 
 === History
 
-You'd need to create a file called .irb-save-history in your home directory for this to work
+You'll need to create a file called .irb-save-history in your home directory for this to work
 
 === Prompt
 
@@ -66,6 +68,7 @@ Class
 	class_methods
 	defined_methods	- returns a hash with two keys :instance (instance methods) and :class (class methods)
 	metaclass	- returns the eigenclass
+	the "include" method is a public one to help to include modules easily.
 
 === Aliases
 	q  => exit
