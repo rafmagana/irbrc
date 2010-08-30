@@ -181,6 +181,8 @@ class Object
 end
 
 class Class
+  public :include
+  
   def class_methods
     (methods - Class.instance_methods - Object.methods).sort
   end
