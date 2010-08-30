@@ -1,9 +1,26 @@
-%w{rubygems wirble pp irb/ext/save-history}.each do |lib| 
+%w{rubygems wirble pp irb/ext/save-history ap mush}.each do |lib| 
   begin 
     require lib 
   rescue LoadError => err
     $stderr.puts "Couldn't load #{lib}: #{err}"
   end
+end
+
+#URL shorteners
+def by(url)
+  bitly = Mush::Services::Bitly.new
+  bitly.login = "your_user"
+  bitly.apikey = "your_api_key"
+  
+  bitly.shorten url
+end
+
+def is(url)
+  Mush::Services::IsGd.new.shorten url
+end
+
+def un(url)
+  Mush::Services::Unu.new.shorten url
 end
 
 #Wirble.init and Wirble.colorize and maybe more afterwards
